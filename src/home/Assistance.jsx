@@ -1,6 +1,19 @@
 import React from "react";
 import { FaHouseUser } from "react-icons/fa6";
+import { AssistCard } from "../components/AssistCard";
 const Assistance = () => {
+  const CardDetails = [
+    {
+      title: "Where can i get help filling out my application?",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima cupiditate fuga voluptatum aliquid officia incidunt atque tempora ullam voluptas?",
+    },
+    {
+      title: "Where can i get help filling out my application?",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima cupiditate fuga voluptatum aliquid officia incidunt atque tempora ullam voluptas?",
+    },
+  ];
   return (
     <div>
       <section className="assistance">
@@ -10,32 +23,13 @@ const Assistance = () => {
             <h1>Technical Assistance</h1>
           </div>
           <div className="flex">
-            <div className="assist-card">
-              <div className="icon">
-                <FaHouseUser className="house-user" />
-              </div>
-              <div className="card-content">
-                <h3>Where can i get help filling out my application?</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Pariatur minima cupiditate fuga voluptatum aliquid officia
-                  incidunt atque tempora ullam voluptas?
-                </p>
-              </div>
-            </div>
-            <div className="assist-card">
-              <div className="icon">
-                <FaHouseUser className="house-user" />
-              </div>
-              <div className="card-content">
-                <h3>Where can i get help filling out my application?</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Pariatur minima cupiditate fuga voluptatum aliquid officia
-                  incidunt atque tempora ullam voluptas?
-                </p>
-              </div>
-            </div>
+            {CardDetails.map((val, i) => {
+              return (
+                <div className="col" key={i}>
+                  <AssistCard {...val} />
+                </div>
+              );
+            })}
           </div>
           <div className="assist-contact">
             <h2>For Questions, contact</h2>

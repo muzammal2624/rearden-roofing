@@ -1,6 +1,21 @@
 import React from "react";
+import ContactCard from "../components/ContactCard";
 
 const Contact = () => {
+  const ContactCardDetail = [
+    {
+      title: "Phone Number",
+      description: "(530)403-9830",
+    },
+    {
+      title: "Email Address",
+      description: "info@reardenltd.com.au",
+    },
+    {
+      title: "2560 Feather River Blvd STE C",
+      description: "(530)403-9830",
+    },
+  ];
   return (
     <div>
       <section className="contact">
@@ -15,36 +30,13 @@ const Contact = () => {
             </p>
           </div>
           <div className="flex">
-            <div className="assist-card">
-              <div className="icon">
-                <i className="fa-solid fa-phone"></i>
-              </div>
-              <div className="card-content">
-                <h3>Phone Number</h3>
-                <p>(530)403-9830</p>
-              </div>
-            </div>
-            <div className="assist-card">
-              <div className="icon">
-                <i className="fa-solid fa-envelope"></i>
-              </div>
-              <div className="card-content">
-                <h3>Email Address</h3>
-                <p>info@reardenltd.com.au</p>
-              </div>
-            </div>
-            <div className="assist-card">
-              <div className="icon">
-                <i className="fa-solid fa-location-dot"></i>
-              </div>
-              <div className="card-content">
-                <p>
-                  2560 Feather River Blvd <br />
-                  STE C
-                </p>
-                <p>Oraville CA 95965</p>
-              </div>
-            </div>
+            {ContactCardDetail.map((val, i) => {
+              return (
+                <div className="col" key={i}>
+                  <ContactCard {...val} />
+                </div>
+              );
+            })}
           </div>
 
           <div className="form">

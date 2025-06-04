@@ -7,7 +7,26 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import SwiperItem from "../components/SwiperItem";
 const Project = () => {
+  const ItemDetails = [
+    {
+      title: "Roof Instructions",
+      description: "Roof/IDEAS",
+    },
+    {
+      title: "Roof Instructions",
+      description: "Roof/IDEAS",
+    },
+    {
+      title: "Roof Instructions",
+      description: "Roof/IDEAS",
+    },
+    {
+      title: "Roof Instructions",
+      description: "Roof/IDEAS",
+    },
+  ];
   return (
     <div className="slider-wrapper">
       <div className="project-content">
@@ -28,64 +47,17 @@ const Project = () => {
           spaceBetween={30}
           slidesPerView={2}
         >
-          <SwiperSlide>
-            <div className="slider-content">
-              <div class="swiper-slide slider-item">
-                <div class="slider-content">
-                  <div class="flex">
-                    <div class="slide-headings">
-                      <h2 class="slide-title">Roof Instructions</h2>
-                      <h3 class="slide-subtitle">Roof/IDEAS</h3>
-                    </div>
-                    <div class="slide-button">
-                      <span>
-                        <FaLongArrowAltRight />
-                      </span>
-                    </div>
-                  </div>
-                </div>
+          {ItemDetails.map((val, i) => {
+            return (
+              <div className="col" key={i}>
+                <SwiperSlide>
+                  <SwiperItem {...val} />
+                </SwiperSlide>
               </div>
-            </div>
-          </SwiperSlide>
-
+            );
+          })}
           <SwiperSlide>
-            <div className="slider-content">
-              <div class="swiper-slide slider-item">
-                <div class="slider-content">
-                  <div class="flex">
-                    <div class="slide-headings">
-                      <h2 class="slide-title">Roof Instructions</h2>
-                      <h3 class="slide-subtitle">Roof/IDEAS</h3>
-                    </div>
-                    <div class="slide-button">
-                      <span>
-                        <FaLongArrowAltRight />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="slider-content">
-              <div class="swiper-slide slider-item">
-                <div class="slider-content">
-                  <div class="flex">
-                    <div class="slide-headings">
-                      <h2 class="slide-title">Roof Instructions</h2>
-                      <h3 class="slide-subtitle">Roof/IDEAS</h3>
-                    </div>
-                    <div class="slide-button">
-                      <span>
-                        <FaLongArrowAltRight />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <SwiperItem />
           </SwiperSlide>
         </Swiper>
       </div>

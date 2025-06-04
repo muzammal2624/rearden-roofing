@@ -1,6 +1,16 @@
 import React from "react";
 import { LuPaintRoller } from "react-icons/lu";
+import ChooseCard from "../components/ChooseCard";
+
 const Choose = () => {
+  const ChooseItem = [
+    {
+      title: "Quality Materials",
+    },
+    {
+      title: "Quality Materials",
+    },
+  ];
   return (
     <>
       <section className="choose">
@@ -18,48 +28,22 @@ const Choose = () => {
             </p>
 
             <div className="flex">
-              <div className="choose-card">
-                <span>
-                  <LuPaintRoller />
-                  <h2>
-                    Quality
-                    <br />
-                    Materials
-                  </h2>
-                </span>
-              </div>
-              <div className="choose-card">
-                <span>
-                  <LuPaintRoller />
-                  <h2>
-                    Quality
-                    <br />
-                    Materials
-                  </h2>
-                </span>
-              </div>
+              {ChooseItem.map((val, i) => {
+                return (
+                  <div className="col" key={i}>
+                    <ChooseCard {...val} />
+                  </div>
+                );
+              })}
             </div>
             <div className="flex">
-              <div className="choose-card">
-                <span>
-                  <LuPaintRoller />
-                  <h2>
-                    Quality
-                    <br />
-                    Materials
-                  </h2>
-                </span>
-              </div>
-              <div className="choose-card">
-                <span>
-                  <LuPaintRoller />
-                  <h2>
-                    Quality
-                    <br />
-                    Materials
-                  </h2>
-                </span>
-              </div>
+              {ChooseItem.map((val, i) => {
+                return (
+                  <div className="col" key={i}>
+                    <ChooseCard {...val} />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
